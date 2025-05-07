@@ -1,0 +1,51 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+config.yaml
+gsc_cli_config.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Reports / outputs
+reports/
+*.xlsx
+*.md
+*.docx
+
+!README.md
+
+# Temporary files
+*.tmp
+*.temp
+
+# OAuth & service account credentials
+token.pickle
+oauth_client_secrets.json
+service_account.json
+
+# Jupyter
+.ipynb_checkpoints/

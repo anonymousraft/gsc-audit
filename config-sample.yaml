@@ -1,0 +1,45 @@
+auth:
+  type: "oauth"                # "oauth" or "service_account"
+  oauth_credentials_file: "gsc_cli_config.json"
+  oauth_scope:
+    - "https://www.googleapis.com/auth/webmasters.readonly"
+  credentials_file: "token.pickle"
+  sa_keyfile: "service_account.json"
+  sa_scopes:
+    - "https://www.googleapis.com/auth/webmasters.readonly"
+
+dates:
+  start_date: "2023-01-01"
+  end_date: ""                 # leave blank to auto-detect
+
+branded:
+  regex: "(?i)^(?:brand_terms1|brand_term2)"
+
+filters:
+  country: ""   # ISO 3166-1 alpha-2 (e.g. "US", "IN"); blank = all
+
+thresholds:
+  low_hanging:
+    min_impressions: 1000
+    max_ctr: 0.015
+  ctr_decay_days: 30
+  position_drop_threshold: 5
+
+output:
+  formats:
+    excel: true
+    markdown: true
+    docx: true
+  excel_path: "reports/gsc_audit.xlsx"
+  markdown_path: "reports/summary.md"
+  docx_path: "reports/summary.docx"
+
+visualization:
+  pie_charts: true
+  line_charts: true
+
+logging:
+  level: "INFO"
+  file: "logs/gsc_audit.log"
+
+interactive: true
