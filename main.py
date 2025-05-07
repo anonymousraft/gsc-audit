@@ -253,8 +253,8 @@ def build_report(cfg, service, logger, site_url):
                 logger.warning(f"No device data for '{label}'")
         seg_counts = pd.DataFrame([
             {'segment':'Branded','clicks':sum_b['clicks']},
-            {'segment':'Non-Branded','clicks':sum_nb['clicks']},
-            {'segment':'Overall','clicks':sum_o['clicks']}
+            {'segment':'Non-Branded','clicks':sum_nb['clicks']}
+           # {'segment':'Overall','clicks':sum_o['clicks']}
         ])
         plot_pie(seg_counts,'segment','clicks',"Segment_Clicks",str(out_dir))
     
