@@ -1,10 +1,10 @@
-# GSC Audit Automation Tool
+# GSC Audit Automation
 
-A comprehensive, configurable Python script to automate Google Search Console (GSC) audits. Fetches performance data, segments by branded vs. non-branded, generates multi-level folder analyses, MoM comparisons, anomaly detection, and rich visual reports (Excel, Markdown, DOCX, and charts).
+A configurable Python script to automate Google Search Console (GSC) audits. Fetches performance data, segments by branded vs. non-branded, generates multi-level folder analyses, MoM comparisons, anomaly detection, and rich visual reports (Excel, Markdown, DOCX, and charts).
 
 ---
 
-## 🚀 Features
+## Features
 
 - **OAuth2 or Service Account** authentication  
 - Fetch **all** GSC rows with automatic pagination  
@@ -20,7 +20,7 @@ A comprehensive, configurable Python script to automate Google Search Console (G
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.8+  
 - A GSC property you have access to  
@@ -28,11 +28,11 @@ A comprehensive, configurable Python script to automate Google Search Console (G
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourorg/gsc-audit.git
+   git clone https://github.com/anonymousraft/gsc-audit.git
    cd gsc-audit
    ```
 2. Create & activate a virtual environment:
@@ -48,9 +48,9 @@ A comprehensive, configurable Python script to automate Google Search Console (G
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
-Copy and edit `config.yaml` in the project root:
+Copy and edit `config-sample.yaml` in the project root:
 
 ```yaml
 auth:
@@ -68,7 +68,7 @@ dates:
   end_date: ""                           # leave blank to auto-detect last available
 
 branded:
-  regex: '(?i)^(?:cba|c ba)'             # case-insensitive prefix match for branded queries
+  regex: '(?i)^(?:brand_term1|brand_term2)'             # case-insensitive prefix match for branded queries
 
 filters:
   country: "US"                          # ISO 3166-1 alpha-2; blank = all
@@ -111,7 +111,7 @@ interactive: true                         # prompt to select GSC property
 
 ---
 
-## ▶️ Usage
+## Usage
 
 Run the audit with:
 
@@ -124,7 +124,7 @@ python main.py --config config.yaml --property https://example.com/
 
 ---
 
-## 📂 Output Structure
+## Output Structure
 
 - **Excel**:  
   - `RawFull`, `RawBranded`, `RawNonBranded`  
@@ -139,15 +139,7 @@ python main.py --config config.yaml --property https://example.com/
 
 ---
 
-## 🚧 Troubleshooting
-
-- **KeyError: 'clicks'** → ensure `gsc_fetcher.py` returns `clicks` column even when API returns zero rows.  
-- **Infinite loop paging** → use the latest `fetch_performance` which stops when `< page_size`.  
-- **Slow anomaly charts** → switch to aggregating daily totals before plotting.
-
----
-
-## 🤝 Contributing
+## Contributing
 
 1. Fork & branch  
 2. Make your changes  
@@ -155,7 +147,7 @@ python main.py --config config.yaml --property https://example.com/
 
 ---
 
-## 📄 License
+## License
 
 [MIT License](LICENSE)
 
